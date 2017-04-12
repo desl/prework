@@ -1,0 +1,76 @@
+Answer the following questions:
+
+Create an environment variable called FIRST_NAME and set it equal to your first name (this does not need to be permanent)
+	export FIRST_NAME="dan"
+
+Print the FIRST_NAME variable
+	echo $FIRST_NAME
+
+Print out the $PATH variable
+	echo $PATH
+
+What is the $PATH variable?
+	it contains the list of directories that will be searched for commands when you try to run them in a shell.
+
+Why would you want to create an environment variable?
+	so that a program using your environemnt knows interesting things about how it should run.
+
+How do you permanently save environment variables?
+	echo "export VAR=value" >> .bashrc
+
+What is a process?
+
+How do you list all processes running on your machine?
+	ps auxww
+
+What is a PID?
+	The unique identifying nummer associated with a process. Use it to kill it, for example.
+
+How do you terminate a process?
+	kill $PID, kill -9 $PID
+
+What is the difference between kill and kill -9?
+	kill is a 'terminal kill' which usually works. When things have really gone off the rails, use -9 to send a more serious message to the process.
+
+What grep flag allows for case insensitive search?
+ -i
+
+What grep flag allows for a certain number of lines before the match?
+	-B
+
+What grep flag allows for a certain number of lines around the match?
+	-C
+
+What grep flag allows for a certain number of lines after the match?
+	-A
+
+What grep flag allows for full word search?
+	-w
+
+What grep flag shows you the line number of a match?
+	-n
+
+
+Part II
+Write the following terminal commands to do the following (assume that instructors.txt is an imaginary file):
+
+Find all files inside the Desktop folder that have a name of "learn."
+	find /Users/desl/Desktop -name "learn"
+
+Find all files inside the Desktop folder that start with a "P."
+	find /Users/desl/Desktop -name "P."
+
+Find all files inside the Desktop folder that end with .txt.
+	find /Users/desl/Desktop -name "*.txt"
+
+Find all files inside the Desktop/views folder that have the name data somewhere in their filename.
+	find /Users/desl/Desktop/views -name "*data*"
+
+Inside of the instructors.txt file, output the number of times the word "Elie" appears.
+	grep -c elie instructors.txt
+
+Inside of the instructors.txt file, list all matches for any full word that starts with a capital "P."
+	grep -w "P.*"" instructors.txt
+
+Inside of the instructors.txt file, list all the line numbers for any full word that starts with a "z" (it should match regardless of upper or lower case).
+	grep -ni "z.*"" instructors.txt

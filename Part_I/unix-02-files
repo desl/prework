@@ -1,0 +1,36 @@
+Exercises
+
+Create a file called name.txt.
+	touch name.txt
+
+Try renaming the file to rename.txt using the mv command. What does this tell you about the command?
+	mv name.txt rename.txt
+
+Using the cp command, make a copy of rename.txt and call it copy.txt.
+	cp rename.txt copy.txt
+
+Remove the file copy.txt.
+	rm copy.txt
+
+Create a folder called questions.
+	mkdir questions
+
+Change directories to the questions folder.
+	cd questions
+
+Create a file called first.txt.
+	touch first.txt
+
+Create a file called second.txt.
+	touch second.txt
+
+Go back a directory and make a copy of the questions folder and call it questions_copy.
+	cd ..
+	cp -r questions questions_copy
+
+When using cp -r what is the -r called? What does it do?
+	-r = recursive. Goes down into the files in the director and copies them. Subdirectories the same.
+
+Delete the original questions folder and the copy.
+	rm -rf questions
+	rm -rf questions_copy

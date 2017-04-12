@@ -1,0 +1,12 @@
+Questions to Answer
+
+What is the difference between / and ~? What do we call each of these directories?
+/ = root, is the top of the hierachry. 
+~ = the current user's home directory.
+
+What command do we use to change directories?
+cd
+
+What is the difference between an absolute and relative path?
+An absolute path is valid from anywhere. A relativek path is valid only from where you are. 
+For example, if I'm in ~, ../elie/secrets is a potentially usefule relative path to know. Unless I don't have access to a home directory. Then I would need to know /Users/elie/secrets.

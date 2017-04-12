@@ -1,0 +1,55 @@
+"subl -w"rt I
+Answer the following questions:
+
+What is the difference between git reset and git revert. When would you use one over the other?
+	git reset runs you back to the SHA and deletes the world between current and there. Revert rolls you forward to a state identical to your past. When you read the logs this might make a lot more sense. Unless you have a time machine.
+
+What is the difference between git merge and git rebase. When would you use one over the other?
+	Merge is the straightforward merging of branches. Rebase puts your branch into master as though it was there the whole time which make the logs much easier to read. Rebasing branches that others are working on is really dangerous to linear history.
+
+What is the difference between git stash pop and git stash apply. When would you use one over the other?
+	Pop grabs the stash at teh top of the stack and deletes it. Great for 'getting back to where I was', ,especially if you never need to be there again. Apply recreates the world just so. If you want to try something dangerous, you could use apply and get back to "normal" easily if you've really made a hash of things.
+
+
+What kinds of things can you do in interactive mode when rebasing?
+	squash a bunch of small commits.
+
+Part II
+It's time to practice some more with everything you have learned.
+
+Create a local repository from the command line.
+	mkdir local_repo && cd local_repo && git init
+
+Add and commit files.
+	echo "first" > first.txt ; echo "second" > second.txt
+	git add .
+	git commit -m "first commit"
+
+Push your repository up to GitHub.
+	git remote add origin git@github.com:desl/another_repo.git
+
+Fork and Clone https://github.com/rithmschool/learn_forking.
+	git clone git@github.com:desl/learn_forking.git
+
+Add and commit some changes and submit a PR.
+	https://github.com/rithmschool/learn_forking/pull/13
+
+Change to a different branch and add some files and merge into master when you are done.
+	➜  learn_forking git:(master) git log --oneline
+	c74803f adding forking to master
+	a4a1383 First commit for forking.txt
+	61d3803 made some changes
+	8606b7e Initial commit
+
+Practice using revert to undo commits and rebase with interactive mode for a better commit history.
+	➜  learn_forking git:(master) git log --oneline
+	49de8c8 Revert "adding forking to master"
+	10f9dc1 Revert "First commit for forking.txt"
+	c74803f adding forking to master
+	a4a1383 First commit for forking.txt
+	61d3803 made some changes
+	8606b7e Initial commit
+
+Submit another pull request, with squashed commits.
+
+By now you should feel pretty comfortable working with Git, so push yourself to keep learning more! Start by reading the Advanced Overview on Atlassian and learn about the inner workings of Git and other advanced commands and flags that we have not shown you. Most of all, keep up the good work!
