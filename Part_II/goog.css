@@ -1,0 +1,121 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;  
+	vlink: gray;
+}
+#buttons {
+	align-content: center;
+	margin-top: 20px;
+}
+
+    #circle {
+    	display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      /*-webkit-border-radius: 25px;
+      -moz-border-radius: 25px;*/
+      background: blue;
+      text-align: center;
+      color: white;
+      font-size: 21px;
+      padding: 2px 2px 2px 2px;
+    }
+
+form {
+	width: 100%;
+	align-items: center;
+}
+
+footer {
+	bottom: 0;
+    position: fixed;
+    background: #CCCCCC;
+    padding: 10px;
+    color:    gray;
+    width: 100%;
+    display: inline-block;
+    font-size: 75%;
+}
+
+.footleft{
+	text-align: left;
+	float: left;
+}
+
+.footright{
+	text-align: right;
+	float: right;
+}
+
+header {
+	text-align: right;
+	color: gray;
+	font-size: 75%;
+	float: right;
+	/*padding: 10px;*/
+	/* display: inline-block;*/
+}
+
+header a {
+	color: gray;
+	text-decoration: none;
+}
+
+.headrow{
+	display: inline-block;
+}
+
+img {
+	width: 50%;
+	align-self: center;
+}
+
+#pound{
+	padding: 1px;
+	width: 20px;
+	height: 20px;
+	font-size: 0px;
+}
+
+.poundcontent{
+	background-color: gray;
+	border-color: black;
+	width: 2px;
+	height: 2px;
+	padding: 1px;
+	margin: 1px;
+	display: inline-block;
+	font-size: 0px;
+}
+
+.searchbutton{
+	background-color: gray;
+	border-width: 0px;
+	border-radius: 3px;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+}
+#search {
+	width: 80%;
+	height: 40px;
+	padding: 10px;
+
+}
+#searchdiv {
+	height: 50%;
+	width: 50%;
+	margin:auto;
+	text-align: center;
+}
+
+#space {
+	height: 25%;
+}
+
+
+
