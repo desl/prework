@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minesweeper</title>
+    <style>
+        button{
+          border-color: black;
+        }
+        input{
+          border-color: black;
+        }
+        clock{
+            dislpay: block;
+        }
+        .hidden{
+            background: gray;
+        }
+        .revealed{
+            background: white;
+        }
+        .bomb{
+            background: gray;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Minesweeper</h2>
+    <div id="clock">Timer: <span id="countup">0</span>
+    </div>
+    <div id="remaining">
+    </div>
+    <div id="gameBoard">
+
+    </div>
+    <br>
+    <div id="controls">
+    <button id="resetGame">Reset Game</button>
+    </div>
+    <br>
+
+</body>
+<script src="minesweeper.js"></script>
+</html>
