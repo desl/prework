@@ -1,0 +1,94 @@
+body {
+	background-color: gray;
+}
+
+#circle {
+	border-radius: 500px;
+	width: 500px;
+	height: 500px;
+	background-color: orange;
+	margin: 5px 5px 5px 5px;
+	# top, right, bottom, left
+	border-width: 0px;
+	/*margin: 10px 10px 10px 10px;*/
+}
+
+#clock {
+	border-radius: 510px;
+	width: 510px;
+	height: 510px;
+	background-color: black;
+	padding:5px 5px 5px 5px;
+	border-width: 0px;
+}
+
+#hourhand{
+	width: 100px;
+	height: 15px;
+	background-color: #CCCCCC;
+	animation: clockhand 360s infinite;
+	animation-timing-function: linear;
+}
+
+.hand{
+	position: absolute;
+	top: 263px;
+	left: 270px;
+}
+
+@keyframes clockhand {
+    from {
+    	transform: rotate(0deg);
+    	transform-origin: left;
+    }
+    to {
+    	transform: rotate(360deg);
+    	transform-origin: left;
+    }
+}
+/*
+// Not clear why this doens't work. It rotates all around and then reverses 
+// direction to "come back" to zero.
+
+@keyframes clockhand{
+	0%{
+		transform-origin: left;
+		transform: rotate(0deg)
+	}
+
+	25%{
+		transform-origin: left;
+		transform: rotate(90deg)
+	}
+
+	50%{
+		transform-origin: left;
+		transform: rotate(180deg)
+	}
+
+	75%{
+		transform-origin: left;
+		transform: rotate(270deg)
+	}
+
+	90%{
+		transform-origin: left;
+		transform: rotate(324deg)
+	}
+}*/
+
+#minutehand{
+	width: 150px;
+	height: 12px;
+	background-color: #BBBBBB;
+	animation: clockhand 36s infinite;
+	animation-timing-function: linear;
+}
+
+#secondhand{
+	width: 200px;
+	height: 10px;
+	background-color: #999999;
+	animation: clockhand 3s infinite;
+	animation-timing-function: linear;
+}
