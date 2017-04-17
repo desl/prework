@@ -1,0 +1,36 @@
+/*.col-4 - consumes 33% of the width when the screen size is greater than 960 pixels, 
+	50% of the width when the screen size is greater than 765 pixels and 
+	100% of the width when the screen size is less than 765 pixels.*/
+
+.col-4{
+	width: 33%;
+}
+
+@media (max-width: 765px){
+	.col-4{
+		width: 100%;
+	}
+}
+
+/*.col-6 - consumes 50% of the width when the screen size is greater than 960 pixels 
+	and 100% of the width when the screen size is less than 960 pixels
+	*/
+
+.col-6{
+	width: 50%;
+}
+
+@media (min-width: 765px) and (max-width: 960px) {
+	.col-6{
+ 	   width: 100%
+	}
+	.col-4{
+		width: 50%;
+	}
+}
+
+/*.col-12 - consumes 100% of the width when the screen size at all sizes.*/
+
+.col-12{
+	width: 100%;
+}
