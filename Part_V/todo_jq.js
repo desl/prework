@@ -2,9 +2,8 @@ window.onload = function(){
 
     
 	// If there's nothing in storage, let's put a sample item in there so you know how to use this
-    if (!JSON.parse(localStorage.getItem("Status"))){
-    	localStorage.setItem("List", JSON.stringify(["Sample Item"]));
-   		localStorage.setItem("Status", JSON.stringify([""]));
+    if (!JSON.parse(localStorage.getItem("Todo"))){
+        localStorage.setItem("Todo", JSON.stringify([{item: "Sample Item", status: ""}]));
     }
 
     var form = document.getElementById("formToDo");
@@ -33,11 +32,11 @@ window.onload = function(){
         if (action === 'c'){
             $(e.target).parent().css('text-decoration', 'line-through');
             //read the status array
-            var statusArr = JSON.parse(localStorage.getItem("Status"));
+            var listArr = JSON.parse(localStorage.getItem("Todo"));
             // put 'complete' into the status array at index number
-            statusArr[number] = "c";
+            listArr.status = "c";
             // save the status array
-            localStorage.setItem("Status", JSON.stringify(statusArr));
+            localStorage.setItem("Todo", JSON.stringify(listArr));
         }
 
         if (action === 'd'){
@@ -55,43 +54,36 @@ window.onload = function(){
         var $li = $("i" + number);
         $li.remove();
 
-		var listArr = JSON.parse(localStorage.getItem("List"));
-		var statusArr = JSON.parse(localStorage.getItem("Status"));
-        statusArr[number] = "d";
-        localStorage.setItem("List", JSON.stringify(listArr));
-        localStorage.setItem("Status", JSON.stringify(statusArr));
+        var listArr = JSON.parse(localStorage.getItem("Todo"));
+        listArr[number].status = "d";
+        localStorage.setItem("Todo", JSON.stringify(listArr));
 	}
 
 	function clearList(){
         $list.empty();
 	}
 
-	function addToStorage(item,status){
-		var listArr =[];
-		listArr = JSON.parse(localStorage.getItem("List"));
-		var statusArr = [];
-		statusArr = JSON.parse(localStorage.getItem("Status"));
-		listArr.push(item);
-		statusArr.push(status);
-		localStorage.setItem("List", JSON.stringify(listArr));
-		localStorage.setItem("Status", JSON.stringify(statusArr));
+	function addToStorage(newItem,newStatus){
+        var listArr = JSON.parse(localStorage.getItem("Todo"));
+        listArr.push({item: newItem, status: newStatus});
+        localStorage.setItem("Todo", JSON.stringify(listArr));
 		listFromStorage();
 	}
 
 	function listFromStorage(){
 		clearList();
-		var listArr = JSON.parse(localStorage.getItem("List"));
-		var statusArr = JSON.parse(localStorage.getItem("Status"));
+
+        var listArr = JSON.parse(localStorage.getItem("Todo"));
 
 		for (var i = 0 ; i < listArr.length; i++){
-            if (statusArr[i] !== 'd'){ // d === deleted items, we can skip!
+            if (listArr[i].status !== 'd'){ // d === deleted items, we can skip!
 
                 var $li = $('<li>');
 
                 var idString = "i" + i;
                 $li.attr('id', idString);
 
-        		if (statusArr[i] === 'c'){
+                if (listArr[i].status === 'c'){
                     $li.css('text-decoration', 'line-through');
         		}
 
@@ -112,8 +104,7 @@ window.onload = function(){
                 $li.append($deleteButton);
 
                 var $span = $('<span>');
-                $span.text(listArr[i]);
-                //$span.addClass('lead');
+                $span.text(listArr[i].item);
                 $li.append($span);
 
                 $list.append($li);
