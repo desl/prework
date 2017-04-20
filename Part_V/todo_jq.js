@@ -6,12 +6,8 @@ window.onload = function(){
         localStorage.setItem("Todo", JSON.stringify([{item: "Sample Item", status: ""}]));
     }
 
-    var form = document.getElementById("formToDo");
     var $form = $('#formToDo');
-
-    var submit = document.getElementById("addSubmit");
     var $submit = $('#addSubmit');
-    var list = document.getElementById('list');
     var $list = $('#list');
 
     $submit.on('click', function(e){
