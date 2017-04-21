@@ -35,8 +35,7 @@ $(function(){
 		displayMovies();
 	});
 
-	//eventlistener on sort thead for sort buttons
-
+	//eventlistener on sort thead for sort buttons. All spans in thead are "buttons" in this way.
 	$('thead').on('click','span', function(e){
 		displayMovies($(e.target).attr('id'));
 	});
@@ -45,7 +44,7 @@ $(function(){
 		var listArr = JSON.parse(localStorage.getItem("Movies"));
 		for (var i=0;i<listArr.length;i++){
 			if (listArr[i].movie === removeObj.movie && listArr[i].rating === removeObj.rating){
-				console.log(listArr.splice(i,1));
+				listArr.splice(i,1);
 				break;
 			}
 		}
@@ -73,7 +72,6 @@ $(function(){
 				listArr = listArr.sort(function(a,b){return a.movie < b.movie}); // movies z-a
 				break;
 			default:
-				console.log("defualt sort");
 				listArr = listArr.sort(function(a,b){return a.movie > b.movie}); // movies a-z
 		}
 
