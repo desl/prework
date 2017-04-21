@@ -61,11 +61,11 @@ $(document).ready(function(){
            // Set the background color of the color table:
         //$('.row').eq(1).css('background-color', 'rgb(255,255,255)');
         $('.row').eq(1).css('background-color', cssString);
-    });
+    }); // 7
 
     $('img').on('click',function(e){
         $(e.target).remove();
-    });
+    }); // 8
 
  
 

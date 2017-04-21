@@ -1,4 +1,4 @@
-window.onload = function(){
+$(function(){
 
     
 	// If there's nothing in storage, let's put a sample item in there so you know how to use this
@@ -107,4 +107,4 @@ window.onload = function(){
             }
     	}	
 	}
-}
+});
